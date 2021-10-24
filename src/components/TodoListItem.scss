@@ -31,14 +31,14 @@
         display: flex;
         align-items:  center;
         font-size: 1.5rem;
-        color: #ff6b6b;
+        color: #ffabab;
         cursor: pointer;
         &:hover {
-            color: #ff8787;
+            color: #ff0087;
         }
-        // Between elevements
-        & + & {
-            border-top: 1px solid #dee2e6;
-        }
+    }
+    // Between elevements
+    & + & {
+        border-top: 1px solid #dee2e6;
     }
 }
