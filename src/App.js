@@ -37,11 +37,27 @@ const App = () => {
     },
     [todos],
   );
+
+  const onToggle = useCallback(
+    (id) => {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );
+    },
+    [todos],
+  );
+
   return (
     <div>
       <TodoTemplate>
         <TodoInsert onInsert={onInsert}></TodoInsert>
-        <TodoList todos={todos} onRemove={onRemove}></TodoList>
+        <TodoList
+          todos={todos}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        ></TodoList>
       </TodoTemplate>
     </div>
   );
