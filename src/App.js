@@ -3,20 +3,21 @@ import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
 
-const App = () => {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'Do something',
-      checked: true,
-    },
-    {
-      id: 2,
-      text: 'Do next',
+function createBulkList() {
+  const array = [];
+  for (let i = 1; i <= 2500; i++) {
+    array.push({
+      id: i,
+      text: `Todo: ${i}`,
       checked: false,
-    },
-  ]);
-  const nextId = useRef(4);
+    });
+  }
+  return array;
+}
+
+const App = () => {
+  const [todos, setTodos] = useState(createBulkList);
+  const nextId = useRef(2501);
 
   const onInsert = useCallback(
     (text) => {
