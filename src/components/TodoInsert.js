@@ -24,7 +24,7 @@ const TodoInsert = ({ onInsert }) => {
     <div>
       <form className="TodoInsert" onSubmit={onSubmit}>
         <input
-          placeholder="Insert new TODO Item"
+          placeholder="Insert new TODO item"
           value={value}
           onChange={onChange}
         ></input>
