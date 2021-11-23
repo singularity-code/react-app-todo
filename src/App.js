@@ -1,14 +1,26 @@
-import React, { useState, useRef, useCallback, useReducer } from 'react';
+import React, { useRef, useCallback, useReducer } from 'react';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
+import { LoremIpsum } from "lorem-ipsum";
+
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 1,
+    min: 1
+  },
+  wordsPerSentence: {
+    max: 5,
+    min: 2
+  }
+});
 
 function createBulkList() {
   const array = [];
   for (let i = 1; i <= 1000000; i++) {
     array.push({
       id: i,
-      text: `Todo: ${i}`,
+      text: `Todo ${i}: ${lorem.generateSentences(1)}`,
       checked: false,
     });
   }
