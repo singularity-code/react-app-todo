@@ -5,7 +5,7 @@ import TodoTemplate from './components/TodoTemplate';
 
 function createBulkList() {
   const array = [];
-  for (let i = 1; i <= 2500; i++) {
+  for (let i = 1; i <= 1000000; i++) {
     array.push({
       id: i,
       text: `Todo: ${i}`,
@@ -41,7 +41,7 @@ const App = () => {
   const [todos, dispatch] = useReducer(todoReducer, undefined, createBulkList);
   // without reducer
   // const [todos, setTodos] = useState(createBulkList);
-  const nextId = useRef(2501);
+  const nextId = useRef(1000001);
 
   const onInsert = useCallback((text) => {
     const todo = {
