@@ -8,7 +8,6 @@ const TodoTemplate = ({ children }) => {
       <p>* Sample Application to demo component optimization and SCSS</p>
       <div className="app-title">TODO LIST</div>
       <div className="content">{children}</div>
-      <p>DL Project</p>
     </div>
   );
 };
