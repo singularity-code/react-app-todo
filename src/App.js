@@ -2,17 +2,17 @@ import React, { useRef, useCallback, useReducer } from 'react';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
 import TodoTemplate from './components/TodoTemplate';
-import { LoremIpsum } from "lorem-ipsum";
+import { LoremIpsum } from 'lorem-ipsum';
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
     max: 1,
-    min: 1
+    min: 1,
   },
   wordsPerSentence: {
     max: 5,
-    min: 2
-  }
+    min: 2,
+  },
 });
 
 function createBulkList() {
@@ -38,9 +38,9 @@ function todoReducer(todos, action) {
       return todos.map((todo) =>
         todo.id === action.id
           ? {
-              ...todo,
-              checked: !todo.checked,
-            }
+            ...todo,
+            checked: !todo.checked,
+          }
           : todo,
       );
     default:
